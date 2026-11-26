@@ -1,0 +1,97 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.inputRow {
+  display: flex;
+  gap: var(--space-2);
+  align-items: stretch;
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-control);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+  border-color: var(--color-focus);
+}
+
+.inputError {
+  border-color: var(--color-danger);
+}
+
+.inputError:focus-visible {
+  outline-color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.charCount {
+  position: absolute;
+  right: var(--space-3);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.addButton {
+  height: var(--control-height);
+  padding: 0 var(--space-5);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.addButton:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.addButton:active {
+  background-color: var(--color-primary-active);
+}
+
+.errorText {
+  font-size: var(--font-size-small);
+  color: var(--color-danger);
+  margin-top: 2px;
+}
+
+@media (max-width: 480px) {
+  .input {
+    padding: 0 var(--space-3);
+    font-size: var(--font-size-small);
+  }
+
+  .addButton {
+    padding: 0 var(--space-3);
+    font-size: var(--font-size-small);
+  }
+}

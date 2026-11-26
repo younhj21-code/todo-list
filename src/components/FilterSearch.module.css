@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  background-color: var(--color-surface-muted);
+  padding: 4px;
+  border-radius: var(--radius-control);
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.filterButton {
+  min-height: 38px;
+  min-width: 60px;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-small);
+  background-color: transparent;
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.filterButton:hover {
+  color: var(--color-text);
+}
+
+.filterButton.active {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--space-8) 0 calc(var(--space-3) + 24px);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.searchInput::-webkit-search-decoration,
+.searchInput::-webkit-search-cancel-button,
+.searchInput::-webkit-search-results-button,
+.searchInput::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchInput:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+  border-color: var(--color-focus);
+}
+
+.clearButton {
+  position: absolute;
+  right: var(--space-2);
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-pill);
+}
+
+.clearButton:hover {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.metaInfo {
+  width: 100%;
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+  padding-left: var(--space-1);
+}
+
+@media (max-width: 599px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterGroup {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filterButton {
+    min-width: 0;
+  }
+
+  .searchWrapper {
+    width: 100%;
+  }
+}

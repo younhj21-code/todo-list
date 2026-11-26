@@ -1,0 +1,73 @@
+.footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remainingText {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+}
+
+.remainingText strong {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.clearCompletedButton {
+  min-height: 38px;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-danger);
+  border-radius: var(--radius-small);
+}
+
+.clearCompletedButton:hover:not(:disabled) {
+  background-color: var(--color-danger-soft);
+}
+
+.clearCompletedButton:disabled {
+  color: var(--color-text-muted);
+  background-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.noticeRow {
+  display: flex;
+  justify-content: center;
+}
+
+.autoSaveNotice {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+}
+
+.saveErrorContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.saveErrorText {
+  font-size: var(--font-size-caption);
+  color: var(--color-danger);
+  font-weight: var(--font-weight-medium);
+}
+
+.retryButton {
+  font-size: var(--font-size-caption);
+  color: var(--color-primary);
+  text-decoration: underline;
+  padding: 2px 4px;
+}
